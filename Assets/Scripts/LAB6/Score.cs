@@ -1,16 +1,19 @@
 using UnityEngine;
 using TMPro;
 
-public class Score : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
-    public TMP_Text scoreText;
+    public TMP_Text infoText;
+
+    public PlaneController player;
 
     private float score;
 
     void Update()
     {
-        score += Time.deltaTime * 10;
+        if (player == null) return;
+        score += Time.deltaTime * 10; // aumenta score con tiempo
 
-        scoreText.text ="Score: " + Mathf.FloorToInt(score);
+        infoText.text = "Score: " + Mathf.FloorToInt(score) + "\nVidas: " + player.lives;  // mostrar score + vidas
     }
 }

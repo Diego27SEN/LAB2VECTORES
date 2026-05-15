@@ -5,10 +5,10 @@ public class Asteroides : MonoBehaviour
     public float speed = 20f;
     public float rotationSpeed = 100f;
 
-    void Update()
+    void Update() // para que los asteroides no roten con el planeta vengan hacia el player
     {
     
-        transform.Translate( Vector3.back * speed * Time.deltaTime,Space.World ); // movimiento hacia jugador
+       /* transform.Translate( Vector3.back * speed * Time.deltaTime,Space.World ); // movimiento hacia jugador
 
         transform.Rotate( rotationSpeed * Time.deltaTime, rotationSpeed * Time.deltaTime, 0);     // rotación
 
@@ -17,6 +17,6 @@ public class Asteroides : MonoBehaviour
             Vector3 pos = transform.position;
             pos.z = 80;
             transform.position = pos;
-        }
+        }*/
     }
 }
